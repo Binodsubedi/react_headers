@@ -1,0 +1,14 @@
+.mainPage {
+  display: grid;
+  grid-template-columns: 1fr repeat(6, minmax(min-content, 16.67rem)) 1fr;
+  grid-template-rows: 20% 80%;
+}
+.mainPage .mainPage_headerContainer {
+  display: flex;
+}
+.mainPage .mainPage_headerContainer .mainPage_headerContainer_imageContents {
+  display: flex;
+}
+.mainPage .mainPage_headerContainer .mainPage_headerContainer_imageDots {
+  display: flex;
+}
