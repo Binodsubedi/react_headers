@@ -6,6 +6,9 @@ const FanclubCard = ({FanclubCard,cName}) => {
   return (
     <div className={cName}>
       <div style={{backgroundImage:`url(${FanclubCard.main_image})`}}/>
+      <div className='details_container'>
+        <h4>{FanclubCard.title}</h4>
+      </div>
     </div>
   );
 };

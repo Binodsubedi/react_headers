@@ -47,6 +47,7 @@ const MainPage = () => {
       </div>
       <div className='mainPage_mainBodyContainer'>
         <div className='mainPage_mainBodyContainer_fanclubContainer'>
+          <h2 className='fanclub_header'>FAN CLUB</h2>
           {new_fan_clubs.map((el)=><FanclubCard cName='fanclub_card' FanclubCard={el} />)}
         </div>
         <div className='mainPage_mainBodyContainer_categoriesContainer'>
