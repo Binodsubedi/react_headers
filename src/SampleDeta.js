@@ -1,4 +1,4 @@
-topics_sample1=[{
+export const topics_sample1=[{
     image: 'https://tukuru-co.com/product/sample/a.jpg',
     link: 'https://tukuru-co.com/view/pages/index.php',
 },
@@ -19,7 +19,7 @@ topics_sample1=[{
     link: 'https://tukuru-co.com/view/pages/index.php',
 },
 ];
-topics_sample2=[{
+export const topics_sample2=[{
     image: 'https://tukuru-co.com/product/sample/a.jpg',
     link: 'https://tukuru-co.com/view/pages/index.php',
 },
@@ -36,7 +36,7 @@ topics_sample2=[{
     link: 'https://tukuru-co.com/view/pages/index.php',
 },
 ];
-topics_sample3=[{
+export const topics_sample3=[{
     image: 'https://tukuru-co.com/product/sample/a.jpg',
     link: 'https://tukuru-co.com/view/pages/index.php',
 },
@@ -45,9 +45,9 @@ topics_sample3=[{
     link: 'https://tukuru-co.com/view/pages/index.php',
 },
 ];
-topics_sample4=null;
+export const topics_sample4=null;
 
-new_fan_clubs_sample1 = [
+export const new_fan_clubs_sample1 = [
     {
         idol_uid: 'nsaijhdihsauud',
         main_image: 'https://tukuru-co.com/product/sample/a.jpg',
@@ -77,7 +77,7 @@ new_fan_clubs_sample1 = [
         title: 'タイトルタイトルタイトルタイトルタイトルタイトル',
     },
 ];
-new_fan_clubs_sample2 = [
+export const new_fan_clubs_sample2 = [
     {
         idol_uid: 'nsaijhdihsauud',
         main_image: 'https://tukuru-co.com/product/sample/a.jpg',
@@ -100,7 +100,7 @@ new_fan_clubs_sample2 = [
         title: 'タイトルタイトルタイトルタイトルタイトルタイトル',
     },
 ];
-new_fan_clubs_sample3 = [
+export const new_fan_clubs_sample3 = [
     {
         idol_uid: 'nsaijhdihsauud',
         main_image: 'https://tukuru-co.com/product/sample/a.jpg',
@@ -123,19 +123,19 @@ new_fan_clubs_sample3 = [
         title: 'タイトルタイトルタイトルタイトルタイトルタイトル',
     },
 ];
-new_fan_clubs_sample4 = null;
+export const new_fan_clubs_sample4 = null;
 
-categories_sample1 = ["スポーツ", "クリエイター", "アイドル"];
-categories_sample2 = ["スポーツ", "アーティスト", "ミュージシャン"];
-categories_sample3 = ["スポーツ", "クリエイター"];
-categories_sample4 = null;
+export const categories_sample1 = ["スポーツ", "クリエイター", "アイドル"];
+export const categories_sample2 = ["スポーツ", "アーティスト", "ミュージシャン"];
+export const categories_sample3 = ["スポーツ", "クリエイター"];
+export const categories_sample4 = null;
 
-e_categories_sample1 = ["sports", "creators", "idols"];
-e_categories_sample2 = ["sports", "artists", "musicians"];
-e_categories_sample3 = ["sports", "artists"];
-e_categories_sample4 = null;
+export const e_categories_sample1 = ["sports", "creators", "idols"];
+export const e_categories_sample2 = ["sports", "artists", "musicians"];
+export const e_categories_sample3 = ["sports", "artists"];
+export const e_categories_sample4 = null;
 
-categorys_fan_clubs_sample1 =
+export const categorys_fan_clubs_sample1 =
 [ 
 [
     {
@@ -208,7 +208,7 @@ categorys_fan_clubs_sample1 =
 ],
 ];
 
-categorys_fan_clubs_sample2 =
+export const categorys_fan_clubs_sample2 =
 [ 
 [
     {
@@ -280,7 +280,7 @@ categorys_fan_clubs_sample2 =
     },
 ],
 ];
-categorys_fan_clubs_sample3 =
+export const categorys_fan_clubs_sample3 =
 [ 
 [
     {
