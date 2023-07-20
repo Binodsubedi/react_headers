@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom/client";
 import {topics_sample1,new_fan_clubs_sample1,categories_sample1,e_categories_sample1,categorys_fan_clubs_sample1} from './SampleDeta.js';
 import './styles/mainStyle.css'
 import FanclubCard from './FanclubCard.js';
@@ -47,19 +47,27 @@ const MainPage = () => {
       </div>
       <div className='mainPage_mainBodyContainer'>
         <div className='mainPage_mainBodyContainer_fanclubContainer'>
-          {new_fan_clubs.map((el)=><FanclubCard FanclubCard={el} />)}
+          {new_fan_clubs.map((el)=><FanclubCard cName='fanclub_card' FanclubCard={el} />)}
         </div>
-        <div className='mainPage_mainBodyContainer_categoriesContainer'></div>
+        <div className='mainPage_mainBodyContainer_categoriesContainer'>
+          {categories.map((el,i)=><div className={`categories_card_container cat_card_${i}`}>
+            {categorys_fan_clubs[i].map((e)=><FanclubCard cName={`cats_card cats_card_${el}`} FanclubCard={e}/>)}
+          </div>)}
+        </div>
       </div>
+
       
 
     </div>
   );
 };
 
-ReactDOM.render(
-    <MainPage />,
-  document.querySelector('#root')
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <MainPage />
+  </React.StrictMode>
 );
+
 
 // export default MainPage;

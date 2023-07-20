@@ -1,11 +1,10 @@
 import React from 'react';
-import './styles/fanCard.css'
 
-const FanclubCard = ({FanclubCard}) => {
+const FanclubCard = ({FanclubCard,cName}) => {
 
-  console.log(FanclubCard.main_image)
+  // console.log(FanclubCard.main_image)
   return (
-    <div>
+    <div className={cName}>
       <div style={{backgroundImage:`url(${FanclubCard.main_image})`}}/>
     </div>
   );
