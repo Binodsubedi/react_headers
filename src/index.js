@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom/client";
-import {topics_sample1,new_fan_clubs_sample1,categories_sample1,e_categories_sample1,categorys_fan_clubs_sample1} from './SampleDeta.js';
+import {topics_sample1,new_fan_clubs_sample1,categories_sample1,categorys_fan_clubs_sample1,e_categories_sample1} from './SampleDeta.js';
 import './styles/mainStyle.css'
 import FanclubCard from './FanclubCard.js';
 
@@ -20,7 +20,7 @@ const MainPage = () => {
   // //categories = categories_sample3;
   // //categories = categories_sample4;
 
-  const e_categories = categories_sample1;
+  const e_categories = e_categories_sample1;
   // //e_categories = categories_sample2;
   // //e_categories = categories_sample3;
   // //e_categories = categories_sample4;
@@ -50,10 +50,22 @@ const MainPage = () => {
           <h2 className='fanclub_header'>FAN CLUB</h2>
           {new_fan_clubs.map((el)=><FanclubCard cName='fanclub_card' FanclubCard={el} />)}
         </div>
+        <div className='mainPage_mainBodyContainer_categories'>
+          <h2 className='mainPage_mainBodyContainer_categories_Header'>Categories</h2>
         <div className='mainPage_mainBodyContainer_categoriesContainer'>
+          
           {categories.map((el,i)=><div className={`categories_card_container cat_card_${i}`}>
-            {categorys_fan_clubs[i].map((e)=><FanclubCard cName={`cats_card cats_card_${el}`} FanclubCard={e}/>)}
+            {categorys_fan_clubs[i].map((e,index)=>{
+              if(index === 0){
+                return <div className='categories_first_unit'>
+                <h3 className='categories_specific_names'>{`${el}/${e_categories[i]}`}</h3>
+                <FanclubCard cName={`cats_card cats_card_${el}`} FanclubCard={e}/></div>
+              }
+
+              return <FanclubCard cName={`cats_card cats_card_${el}`} FanclubCard={e}/>
+            })}
           </div>)}
+        </div>
         </div>
       </div>
 

@@ -63,8 +63,14 @@
   width: 100%;
   background-size: cover;
 }
+.mainPage_mainBodyContainer_categories {
+  padding-top: 2rem;
+}
+.mainPage_mainBodyContainer_categories h2 {
+  padding-left: 4.8%;
+}
 .mainPage_mainBodyContainer_categoriesContainer {
-  margin-top: 3rem;
+  margin-top: 2rem;
   display: grid;
   grid-template-rows: repeat(3, min-content);
   gap: 3rem;
@@ -78,6 +84,14 @@
   align-items: center;
   gap: 10px 0px;
   padding: 1rem 0 2rem;
+}
+.mainPage_mainBodyContainer_categoriesContainer .categories_card_container .categories_first_unit {
+  position: relative;
+}
+.mainPage_mainBodyContainer_categoriesContainer .categories_card_container .categories_specific_names {
+  position: absolute;
+  left: 0%;
+  top: -24%;
 }
 .mainPage_mainBodyContainer_categoriesContainer .categories_card_container .cats_card {
   height: 10rem;
