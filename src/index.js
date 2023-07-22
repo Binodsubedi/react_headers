@@ -36,11 +36,11 @@ const MainPage = () => {
 
         <div className='outerShell'>
         <div className='mainPage_headerContainer_imageContents'>
-            {topics.map((el)=><div className='topics_images_container' style={{backgroundImage: `url(${el.image})`}}></div>)}
+            {topics.map((el,i)=><div className='topics_images_container' style={{backgroundImage: `url(${el.image})` }} key={`${el.image}${i}`}></div>)}
             </div>
         </div>
         <div className='mainPage_headerContainer_imageDots'>
-          {topics.map((el)=><div className='mainPage_headerContainer_imageDots_dots'></div>)}
+          {topics.map((el,i)=><div className='mainPage_headerContainer_imageDots_dots' key={`${el.image}${i}`}></div>)}
         </div>
 
 
@@ -48,21 +48,21 @@ const MainPage = () => {
       <div className='mainPage_mainBodyContainer'>
         <div className='mainPage_mainBodyContainer_fanclubContainer'>
           <h2 className='fanclub_header'>FAN CLUB</h2>
-          {new_fan_clubs.map((el)=><FanclubCard cName='fanclub_card' FanclubCard={el} />)}
+          {new_fan_clubs.map((el)=><FanclubCard cName='fanclub_card' FanclubCard={el} key={el.idol_uid} />)}
         </div>
         <div className='mainPage_mainBodyContainer_categories'>
           <h2 className='mainPage_mainBodyContainer_categories_Header'>Categories</h2>
         <div className='mainPage_mainBodyContainer_categoriesContainer'>
           
-          {categories.map((el,i)=><div className={`categories_card_container cat_card_${i}`}>
+          {categories.map((el,i)=><div className={`categories_card_container cat_card_${i}`} key={el}>
             {categorys_fan_clubs[i].map((e,index)=>{
               if(index === 0){
-                return <div className='categories_first_unit'>
+                return <div className='categories_first_unit' key={e.idol_uid}>
                 <h3 className='categories_specific_names'>{`${el}/${e_categories[i]}`}</h3>
                 <FanclubCard cName={`cats_card cats_card_${el}`} FanclubCard={e}/></div>
               }
 
-              return <FanclubCard cName={`cats_card cats_card_${el}`} FanclubCard={e}/>
+              return <FanclubCard cName={`cats_card cats_card_${el}`} FanclubCard={e} key={e.idol_uid}/>
             })}
           </div>)}
         </div>
