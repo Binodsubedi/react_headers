@@ -28,7 +28,7 @@
 }
 .mainPage_mainBodyContainer_fanclubContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 20rem));
   grid-auto-rows: min-content;
   justify-items: center;
   align-items: center;
@@ -38,7 +38,7 @@
 .mainPage_mainBodyContainer_fanclubContainer .fanclub_header {
   position: absolute;
   top: -3.2rem;
-  left: calc(0.5rem + 4.2vw);
+  left: calc(2% + 0.8rem);
 }
 .mainPage_mainBodyContainer_fanclubContainer .fanclub_header::first-letter {
   color: red;
@@ -78,7 +78,7 @@
 }
 .mainPage_mainBodyContainer_categoriesContainer .categories_card_container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 20rem));
   grid-auto-rows: min-content;
   justify-items: center;
   align-items: center;
