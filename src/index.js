@@ -3,8 +3,67 @@ import ReactDOM from "react-dom/client";
 import {topics_sample1,new_fan_clubs_sample1,categories_sample1,categorys_fan_clubs_sample1,e_categories_sample1} from './SampleDeta.js';
 import './styles/mainStyle.css'
 import FanclubCard from './FanclubCard.js';
+import { useRef } from 'react';
 
 const MainPage = () => {
+
+  const imageDotsCont = useRef();
+  const imagesCont = useRef();
+
+  let nowIndex = 2;
+  let totalIndex=-1;
+
+  let marginLeft=0;
+  let marginRight=0;
+
+
+  const leftClickHandler = ()=>{
+
+    // console.log(imageDotsCont.current.children)
+
+    const list = Array.from(imageDotsCont.current.children);
+
+    const imageBox = imagesCont.current
+    
+    if(nowIndex == 0){
+      return;
+    }
+
+    marginLeft +=28;
+
+    imageBox.style.marginLeft = `${marginLeft}rem`;
+
+    list[nowIndex].classList.remove("currentDot");
+
+    nowIndex--;
+
+    list[nowIndex].classList.add("currentDot");
+
+
+  }
+
+  const rightClickHandler = ()=>{
+
+    const list = Array.from(imageDotsCont.current.children);
+    const imageBox = imagesCont.current
+    
+    if(nowIndex == totalIndex){
+      return;
+    }
+
+    marginRight +=28;
+
+    imageBox.style.marginRight = `${marginRight}rem`;
+
+    list[nowIndex].classList.remove("currentDot");
+
+    nowIndex++;
+
+    list[nowIndex].classList.add("currentDot");
+
+  }
+
+
   const topics = topics_sample1;
   // //topics = topics_sample2;
   // //topics = topics_sample3;
@@ -35,12 +94,19 @@ const MainPage = () => {
       <div className='mainPage_headerContainer'>
 
         <div className='outerShell'>
-        <div className='mainPage_headerContainer_imageContents'>
+        <div className='mainPage_headerContainer_imageContents' ref={imagesCont}>
             {topics.map((el,i)=><div className='topics_images_container' style={{backgroundImage: `url(${el.image})` }} key={`${el.image}${i}`}></div>)}
             </div>
+            <div className='Left_button' onClick={()=>leftClickHandler()}>◀️</div>
+            <div className='Right_button' onClick={()=>rightClickHandler()}>▶️</div>
+
         </div>
-        <div className='mainPage_headerContainer_imageDots'>
-          {topics.map((el,i)=><div className='mainPage_headerContainer_imageDots_dots' key={`${el.image}${i}`}></div>)}
+        <div className='mainPage_headerContainer_imageDots' ref={imageDotsCont}>
+          {topics.map((el,i)=>{
+            totalIndex++;
+           return i == 2? <div className='mainPage_headerContainer_imageDots_dots currentDot' key={`${el.image}${i}`}></div> :
+          <div className='mainPage_headerContainer_imageDots_dots' key={`${el.image}${i}`}></div>}
+          )}
         </div>
 
 

@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 600px) {
+  .outerShell {
+    width: 24rem !important;
+  }
+}
 .html {
   font-size: 62.5%;
 }
@@ -15,12 +20,79 @@
   width: 100%;
   display: grid;
   grid-template-columns: [container-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content, 10rem) [col-end]) [center-end] 1fr [container-end];
-  grid-template-rows: 15vh minmax(85vh, min-content);
+  grid-template-rows: 25vh minmax(75vh, min-content);
 }
 .mainPage .mainPage_headerContainer {
   grid-column: container-start/container-end;
   background-color: aqua;
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.mainPage .mainPage_headerContainer .outerShell {
+  width: calc(24rem + 32%);
+  overflow-x: hidden;
+  height: -moz-min-content;
+  height: min-content;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.mainPage .mainPage_headerContainer .outerShell .mainPage_headerContainer_imageContents {
+  display: flex;
+  justify-content: center;
+  width: -moz-min-content;
+  width: min-content;
+  height: 80%;
+  padding: 8px;
+}
+.mainPage .mainPage_headerContainer .outerShell .mainPage_headerContainer_imageContents .topics_images_container {
+  height: 100px;
+  width: 200px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 0.4rem;
+}
+.mainPage .mainPage_headerContainer .outerShell .Left_button {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  width: 3rem;
+  height: 100%;
+  align-items: center;
+  font-size: xx-large;
+  left: 0;
+}
+.mainPage .mainPage_headerContainer .outerShell .Right_button {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  width: 3rem;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+  right: 0;
+}
+.mainPage .mainPage_headerContainer .mainPage_headerContainer_imageDots {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  width: 30%;
+  justify-content: center;
+}
+.mainPage .mainPage_headerContainer .mainPage_headerContainer_imageDots .mainPage_headerContainer_imageDots_dots {
+  height: 10px;
+  width: 10px;
+  border: 0.1rem black solid;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.mainPage .mainPage_headerContainer .mainPage_headerContainer_imageDots .currentDot {
+  background-color: black;
 }
 .mainPage_mainBodyContainer {
   grid-column: center-start/center-end;
@@ -82,7 +154,7 @@
   grid-auto-rows: min-content;
   justify-items: center;
   align-items: center;
-  gap: 10px 0px;
+  gap: 10px 1rem;
   padding: 1rem 0 2rem;
 }
 .mainPage_mainBodyContainer_categoriesContainer .categories_card_container .categories_first_unit {
