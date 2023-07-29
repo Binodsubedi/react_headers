@@ -26,6 +26,11 @@ const MainPage = () => {
     const imageBox = imagesCont.current
     
     if(nowIndex == 0){
+      marginRight += (28*totalIndex)
+      imageBox.style.marginRight = `${marginRight}rem`;
+      list[nowIndex].classList.remove("currentDot");
+      nowIndex = totalIndex;
+      list[nowIndex].classList.add("currentDot");
       return;
     }
 
@@ -48,7 +53,14 @@ const MainPage = () => {
     const imageBox = imagesCont.current
     
     if(nowIndex == totalIndex){
+      // return;
+      marginLeft += (28*totalIndex)
+      imageBox.style.marginLeft = `${marginLeft}rem`;
+      list[nowIndex].classList.remove("currentDot");
+      nowIndex = 0;
+      list[nowIndex].classList.add("currentDot");
       return;
+
     }
 
     marginRight +=28;
@@ -152,7 +164,7 @@ const MainPage = () => {
 
         <div className='outerShell'>
         <div className='mainPage_headerContainer_imageContents' ref={imagesCont}>
-            {topics.map((el,i)=><div className='topics_images_container' style={{backgroundImage: `url(${el.image})` }} key={`${el.image}${i}`}></div>)}
+            {topics.map((el,i)=><a href={el.link}><div className='topics_images_container' style={{backgroundImage: `url(${el.image})` }} key={`${el.image}${i}`}></div> </a>)}
             </div>
             <div className='Left_button' onClick={()=>leftClickHandler()}>◀️</div>
             <div className='Right_button' onClick={()=>rightClickHandler()}>▶️</div>

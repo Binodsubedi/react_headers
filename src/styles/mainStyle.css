@@ -11,6 +11,11 @@
     width: 24rem !important;
   }
 }
+@media screen and (max-width: 400px) {
+  .outerShell {
+    width: 20rem !important;
+  }
+}
 @media screen and (max-width: 660px) {
   .mainPage_mainBodyContainer_fanclubContainer {
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1rem)) !important;
@@ -64,6 +69,7 @@
   width: min-content;
   height: 80%;
   padding: 8px;
+  transition: all 0.3s ease-out;
 }
 .mainPage .mainPage_headerContainer .outerShell .mainPage_headerContainer_imageContents .topics_images_container {
   height: 100px;
@@ -171,7 +177,7 @@
   padding-top: 2rem;
 }
 .mainPage_mainBodyContainer_categories h2 {
-  padding-left: 4.8%;
+  padding-left: calc(2% + 0.8rem);
 }
 .mainPage_mainBodyContainer_categoriesContainer {
   margin-top: 2rem;
