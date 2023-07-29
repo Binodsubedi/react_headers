@@ -129,11 +129,20 @@
   width: 14rem;
   border-right: 0.1rem beige solid;
   border-bottom: 0.1rem beige solid;
+  display: grid;
+  grid-template-rows: 50% 50%;
 }
 .mainPage_mainBodyContainer_fanclubContainer .fanclub_card div:first-child {
-  height: 50%;
   width: 100%;
   background-size: cover;
+}
+.mainPage_mainBodyContainer_fanclubContainer .fanclub_card .details_container {
+  display: grid;
+  grid-template-rows: 30% 70%;
+}
+.mainPage_mainBodyContainer_fanclubContainer .fanclub_card .details_container_tag_name {
+  display: flex;
+  justify-content: space-between;
 }
 .mainPage_mainBodyContainer_categories {
   padding-top: 2rem;
