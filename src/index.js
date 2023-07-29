@@ -63,6 +63,63 @@ const MainPage = () => {
 
   }
 
+  const imageDotsInspector = (e)=>{
+
+    try{
+    // console.log('hhhhhhhelo',e)
+
+    const classes = Array.from(e.target.classList)
+
+    if(classes.length == 1){
+      return;
+    }
+
+    const dot = classes[classes.length -1].split('_')[1];
+
+    let left = false;
+
+    if(dot < nowIndex){
+      left = true;
+    }
+
+    if(dot == nowIndex || (nowIndex == 0 && left) || (nowIndex == totalIndex && !left)){
+      return;
+    }
+
+    const list = Array.from(imageDotsCont.current.children);
+    const imageBox = imagesCont.current
+
+    if(left){
+
+      marginLeft +=(nowIndex-dot)*28;
+
+      imageBox.style.marginLeft = `${marginLeft}rem`;
+  
+      list[nowIndex].classList.remove("currentDot");
+  
+      nowIndex = dot;
+  
+      list[nowIndex].classList.add("currentDot");
+
+    }else{
+      marginRight +=(dot-nowIndex)*28;
+
+      imageBox.style.marginRight = `${marginRight}rem`;
+  
+      list[nowIndex].classList.remove("currentDot");
+  
+      nowIndex = dot;
+  
+      list[nowIndex].classList.add("currentDot");
+
+    }
+  }catch(err){
+    return;
+  }
+
+
+  }
+
 
   const topics = topics_sample1;
   // //topics = topics_sample2;
@@ -101,13 +158,14 @@ const MainPage = () => {
             <div className='Right_button' onClick={()=>rightClickHandler()}>▶️</div>
 
         </div>
-        <div className='mainPage_headerContainer_imageDots' ref={imageDotsCont}>
+        <div className='mainPage_headerContainer_imageDots' ref={imageDotsCont} onClick={(e)=>imageDotsInspector(e)}>
           {topics.map((el,i)=>{
             totalIndex++;
-           return i == 2? <div className='mainPage_headerContainer_imageDots_dots currentDot' key={`${el.image}${i}`}></div> :
-          <div className='mainPage_headerContainer_imageDots_dots' key={`${el.image}${i}`}></div>}
+           return i == 2? <div className={`mainPage_headerContainer_imageDots_dots currentDot dot_${i}`} key={`${el.image}${i}`}></div> :
+          <div className={`mainPage_headerContainer_imageDots_dots dot_${i}`} key={`${el.image}${i}`}></div>}
           )}
         </div>
+
 
 
       </div>
