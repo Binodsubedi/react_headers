@@ -114,6 +114,7 @@ const MainPage = () => {
       <div className='mainPage_mainBodyContainer'>
         <div className='mainPage_mainBodyContainer_fanclubContainer'>
           <h2 className='fanclub_header'>FAN CLUB</h2>
+          <button className='mainPage_mainBodyContainer_fanclubContainer_button'>もっと見るボタン</button>
           {new_fan_clubs.map((el)=><FanclubCard cName='fanclub_card' FanclubCard={el} key={el.idol_uid} />)}
         </div>
         <div className='mainPage_mainBodyContainer_categories'>
@@ -121,6 +122,7 @@ const MainPage = () => {
         <div className='mainPage_mainBodyContainer_categoriesContainer'>
           
           {categories.map((el,i)=><div className={`categories_card_container cat_card_${i}`} key={el}>
+            <button className='categories_card_container_button'>もっと見るボタン</button>
             {categorys_fan_clubs[i].map((e,index)=>{
               if(index === 0){
                 return <div className='categories_first_unit' key={e.idol_uid}>
